@@ -1,0 +1,63 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/variables';
+
+.home {
+  &__navigation-list {
+    display: flex;
+    flex-direction: column;
+    gap: $middle-gap;
+  }
+
+  &__navigation-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    border-radius: $large-radius;
+    background-color: $turquoise-ice;
+    box-shadow: $shadow-light;
+
+    @include dark {
+      background-color: $midnight-black;
+      box-shadow: $shadow-dark;
+    }
+
+    span {
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 120%;
+
+      @include dark {
+        color: $blue;
+      }
+    }
+
+    svg {
+      fill: $midnight-black;
+
+      @include dark {
+        fill: $blue;
+      }
+    }
+
+    @include hover {
+      background-color: $blue;
+
+      @include dark {
+        background-color: $blue;
+      }
+
+      span {
+        @include dark {
+          color: $midnight-black;
+        }
+      }
+
+      svg {
+        @include dark {
+          fill: $midnight-black;
+        }
+      }
+    }
+  }
+}

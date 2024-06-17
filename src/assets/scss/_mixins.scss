@@ -1,0 +1,144 @@
+@import './variables';
+
+@mixin dark {
+  html[data-theme='dark'] & {
+    @content;
+  }
+}
+
+@mixin transition($parameters...) {
+  $transition: ();
+
+  @each $parameter in $parameters {
+    $transition: append($transition, #{$parameter} 0.125s, comma);
+  }
+
+  transition: $transition;
+}
+
+
+@mixin hover {
+  @media (hover: hover) {
+    @include transition(all);
+
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin smooth-appearance {
+  animation: smooth-appearance 0.125s ease-in forwards;
+}
+
+@mixin title {
+  font-size: 22px;
+  line-height: 120%;
+  font-weight: 400;
+
+  @include dark {
+    color: $white;
+  }
+}
+
+@mixin map-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $alpha-midnight-black;
+  line-height: 120%;
+  width: 100%;
+  border-radius: $middle-radius;
+  background-color: $turquoise-ice;
+  box-shadow: $shadow-light;
+
+  &.selected {
+    cursor: initial;
+    background-color: $blue;
+
+    @include dark {
+      color: $black;
+      background-color: $blue;
+    }
+  }
+
+  @include hover {
+    background-color: $blue;
+  }
+
+  @include dark {
+    color: $white;
+    background-color: $midnight-black;
+    box-shadow: $shadow-dark;
+
+    @include hover {
+      color: $black;
+      background-color: $blue;
+    }
+  }
+}
+
+@mixin scroll-bar {
+  -ms-overflow-style: auto;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+}
+
+@mixin light-card {
+  &::before {
+    opacity: 0;
+  }
+
+  .card {
+    &__meta-item {
+      color: initial;
+      background-color: $white;
+    }
+
+    &__title {
+      color: initial;
+    }
+
+    &__speaker,
+    &__speaker-company {
+      color: initial;
+
+      svg {
+        fill: $midnight-black;
+      }
+    }
+  }
+}
+
+@mixin dark-card {
+  &::before {
+    opacity: 1;
+  }
+
+  .card {
+    &__meta-item {
+      color: $blue;
+      background-color: #FFFFFF1a;
+    }
+
+    &__title {
+      color: $turquoise-ice;
+    }
+
+    &__speaker,
+    &__speaker-company {
+      color: $blue;
+
+      svg {
+        fill: $blue;
+      }
+    }
+  }
+}

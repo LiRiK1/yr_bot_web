@@ -1,0 +1,39 @@
+// FONTS
+$onySans: 'ONY Sans', sans-serif;
+
+// TG VARIABLES
+$tg-background-color: var(--tg-theme-secondary-bg-color);
+
+// COLORS
+$white: #FFFFFF;
+$black: #000000;
+$grey: #808080;
+$blue: #80D6FF;
+$light-grey: #9F9F9F;
+$turquoise-ice: #F0F7FA;
+$midnight-black: #2B323A;
+$alpha-midnight-black: #2B323A80;
+
+// SHADOWS
+$shadow-light: -2px 2px 15px 0px rgba(17, 17, 17, 0.10);
+$shadow-dark: -2px 2px 15px 0px rgba(17, 17, 17, 0.60);
+
+// BORDER RADII
+$small-radius: 7px;
+$middle-radius: 10px;
+$large-radius: 15px;
+
+// GRADIENTS
+$card-gradient-light: radial-gradient(circle at bottom, rgba(128, 214, 255, 0.8) 0%, rgba(240, 247, 250, 1) 55%);
+$card-gradient-hover-light: radial-gradient(circle at bottom, rgba(128, 214, 255, 1) 0%, rgba(240, 247, 250, 1) 55%);
+$card-gradient-dark: radial-gradient(circle at bottom, rgba(128, 214, 255, 0.8) 0%, rgba(43, 50, 58, 1) 100%);
+$event-gradient-light: radial-gradient(at right bottom, rgba(128, 214, 255, 0.8) 0%, rgb(240, 247, 250) 90%);
+$event-gradient-dark: radial-gradient(at right bottom, rgba(128, 214, 255, 0.8) 0%, rgba(43, 50, 58, 1) 65%);
+
+// GAPS
+$middle-gap: 10px;
+$cards-list-gap: 10px;
+$default-page-gap: 20px;
+
+// PADDINGS
+$page-padding: 15px;

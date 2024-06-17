@@ -1,0 +1,35 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/variables';
+
+.stub {
+  $stub-height: 124px;
+  $stub-width: 172px;
+
+  position: absolute;
+  top: calc((100% - $stub-height) / 2);
+  left: calc((100% - $stub-width) / 2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  @include smooth-appearance;
+
+  svg {
+    fill: $light-grey;
+
+    @include dark {
+      fill: $turquoise-ice;
+    }
+  }
+
+  &__message {
+    color: $light-grey;
+    font-size: 16px;
+    line-height: 120%;
+
+    @include dark {
+      color: $turquoise-ice;
+    }
+  }
+}

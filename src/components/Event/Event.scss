@@ -1,0 +1,60 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/variables';
+
+.event {
+  display: flex;
+  flex-direction: column;
+  gap: $default-page-gap;
+  background-color: $tg-background-color;
+
+  &__title {
+    @include title;
+  }
+
+  .card {
+    width: 100%;
+    background-image: $event-gradient-light;
+    pointer-events: none;
+
+    &::before {
+      background-image: $event-gradient-dark;
+    }
+
+    &__info-container {
+      gap: $default-page-gap;
+    }
+
+    &__meta-item {
+      font-size: 14px;
+      line-height: 120%;
+      height: 22px;
+      max-width: 53px;
+
+      &:first-child {
+        max-width: 62px;
+      }
+
+      &:last-child {
+        max-width: 95px;
+      }
+    }
+
+    &__title {
+      font-size: 18px;
+      line-height: 120%;
+    }
+
+    &__speaker,
+    &__speaker-company {
+      gap: 6px;
+      font-size: 14px;
+      line-height: 120%;
+
+      svg {
+        width: 11px;
+        height: 12px;
+        margin-top: 2px;
+      }
+    }
+  }
+}

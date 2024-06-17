@@ -1,0 +1,24 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/variables';
+
+.club-route {
+  border-radius: $middle-radius;
+  padding: 15px;
+  background-color: $turquoise-ice;
+  box-shadow: $shadow-light;
+
+  @include dark {
+    background-color: $midnight-black;
+    box-shadow: $shadow-dark;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 125%;
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

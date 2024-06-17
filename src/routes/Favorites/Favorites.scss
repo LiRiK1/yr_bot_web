@@ -1,0 +1,32 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/variables';
+
+.favorites {
+  display: flex;
+  flex-direction: column;
+  gap: $default-page-gap;
+
+  &__header {
+    display: flex;
+    gap: $middle-gap;
+    align-items: center;
+
+    svg {
+      fill: $midnight-black;
+
+      @include dark {
+        fill: $white;
+      }
+    }
+  }
+
+  &__title {
+    @include title;
+  }
+
+  &__events {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $cards-list-gap;
+  }
+}

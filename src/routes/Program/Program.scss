@@ -1,0 +1,54 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/variables';
+
+.program {
+  display: flex;
+  flex-direction: column;
+  gap: $default-page-gap;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title{
+    @include title;
+  }
+
+  &__download {
+    &-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      line-height: 120%;
+      width: 100%;
+      height: 47px;
+      color: $midnight-black;
+      border-radius: $large-radius;
+      background-color: $blue;
+      box-shadow: $shadow-light;
+
+      @include hover {
+        color: $white;
+        background-color: $midnight-black;
+      }
+
+      @include dark {
+        background-color: $white;
+
+        @include hover {
+          color: $midnight-black;
+          background-color: $blue;
+        }
+      }
+    }
+  }
+
+  &__events {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $cards-list-gap;
+  }
+}

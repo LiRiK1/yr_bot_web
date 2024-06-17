@@ -1,0 +1,22 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/variables';
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: $default-page-gap;
+
+  &__title {
+    @include title;
+  }
+
+  &__events {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $cards-list-gap;
+
+    .card {
+      width: 100%;
+    }
+  }
+}

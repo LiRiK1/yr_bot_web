@@ -1,0 +1,152 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/variables';
+
+.card {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: calc((100% / 2) - ($cards-list-gap / 2));
+  border-radius: $large-radius;
+  background-image: $card-gradient-light;
+  box-shadow: $shadow-light;
+
+  @include smooth-appearance;
+
+  @media (max-width: 340px) {
+    width: 100%;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    border-radius: $large-radius;
+    inset: -1px;
+    background-image: $card-gradient-dark;
+    z-index: -1;
+    opacity: 0;
+
+    @include transition(opacity);
+
+    transition-delay: 0.045s;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 17px;
+    padding: 15px;
+  }
+
+  &__info-container {
+    display: flex;
+    flex-direction: column;
+    gap: $middle-gap;
+  }
+
+  &__meta {
+    display: flex;
+    gap: 5px;
+
+    &-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 11px;
+      line-height: 125%;
+      border-radius: $small-radius;
+      background-color: $white;
+      height: 19px;
+      flex: 1 1 35px;
+      max-width: 40px;
+
+      &:first-child {
+        flex: 1 1 42px;
+        max-width: 47px;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 14px;
+    line-height: 125%;
+    word-wrap: break-word;
+  }
+
+  &__speakers {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  &__speaker,
+  &__speaker-company {
+    display: flex;
+    gap: 4px;
+    font-size: 11px;
+    line-height: 125%;
+
+    svg {
+      fill: $midnight-black;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+  }
+
+  &__save-button {
+    color: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    height: 30px;
+    border-radius: $middle-radius;
+    background-color: $white;
+
+    svg {
+      stroke: $midnight-black;
+      fill: transparent;
+
+       @include transition(fill);
+    }
+
+    &[data-saved="true"] {
+      svg {
+        fill: $midnight-black;
+      }
+    }
+  }
+
+  &__meta-item,
+  &__title,
+  &__speaker,
+  &__speaker-company {
+    @include transition(color, background-color);
+
+    transition-delay: 0.045s;
+  }
+
+  &__speaker,
+  &__speaker-company {
+    svg {
+      @include transition(fill);
+
+      transition-delay: 0.045s;
+    }
+  }
+
+  &:not(:has(.card__save-button:hover)):hover {
+    @include dark-card;
+  }
+
+  @include dark {
+    @include dark-card;
+
+    &:not(:has(.card__save-button:hover)):hover {
+      @include light-card;
+
+      background-image: $card-gradient-hover-light;
+    }
+  }
+}

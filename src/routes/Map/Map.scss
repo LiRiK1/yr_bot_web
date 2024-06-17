@@ -1,0 +1,32 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/variables';
+
+.map {
+  display: flex;
+  flex-direction: column;
+  gap: $default-page-gap;
+
+  &__floors {
+    &-list {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    &-item {
+      flex: 1 1 80px;
+      max-width: 93px;
+
+      &:last-child {
+        flex-basis: 140px;
+        max-width: 147px;
+      }
+    }
+
+    &-switcher {
+      @include map-button;
+      height: 40px;
+      font-size: 14px;
+    }
+  }
+}

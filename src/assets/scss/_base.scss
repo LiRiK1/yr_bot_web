@@ -1,0 +1,49 @@
+@import './mixins';
+@import './variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html:not(:has(.home)) {
+  scrollbar-gutter: stable;
+}
+
+body {
+  font-family: $onySans;
+  color: $midnight-black;
+  background-color: $tg-background-color;
+  padding: $page-padding;
+
+  @include dark {
+    color: $white;
+  }
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  appearance: none;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+@keyframes smooth-appearance {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

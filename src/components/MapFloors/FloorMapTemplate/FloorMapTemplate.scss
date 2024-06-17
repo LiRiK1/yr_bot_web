@@ -1,0 +1,62 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/variables';
+
+.route {
+  display: flex;
+  flex-direction: column;
+  gap: $default-page-gap;
+
+  &__map {
+    position: relative;
+  }
+
+  &__map-wrapper {
+    display: flex;
+    border-radius: $large-radius;
+    overflow: auto;
+    height: 230px;
+    background-color: $midnight-black;
+    box-shadow: $shadow-light;
+
+    @include dark {
+      box-shadow: $shadow-dark;
+    }
+
+    @include scroll-bar;
+
+    & > svg {
+      width: 100%;
+      transform-origin: top left;
+
+      @include transition(transform);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    &-item {
+      flex: 1 1 100px;
+      max-width: 111px;
+    }
+  }
+
+  &__button {
+    @include map-button;
+    height: 35px;
+    font-size: 11px;
+
+    &.selected {
+      cursor: pointer;
+    }
+  }
+
+  &__description {
+    font-family: $onySans;
+    font-size: 16px;
+    line-height: 130%;
+    white-space: pre-wrap;
+  }
+}
